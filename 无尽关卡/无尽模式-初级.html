@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无尽模式-初级</title>
+<embed src="../music/Alan Walker - Faded (纯音乐).mp3" id="music" volume="0" hidden="true" autostart="true" loop="true"></embed>
+<style type="text/css">
+.kj{
+	width:auto;
+	height:500px;
+	position:relative;
+	}
+.kj_1{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-600px;
+	margin-top: -200px;
+    width: 1200px;
+    height: 400px;
+    text-align: center;
+	}
+.xueliang{
+	width: 100px;
+	position: absolute;
+	left: 258px;
+	top: -14px;
+	height: 59px;
+	}
+.health{
+	margin-left:50px;
+	text-align:left;
+	width: 291px;
+	height: 20px;
+	position: absolute;
+	left: 281px;
+	top: 4px;
+	}
+.score{
+	position: absolute;
+	left: 748px;
+	width: 120px;
+	height: 10px;
+	top: -15px;
+	}
+.time{
+	position: absolute;
+	left: 796px;
+	width: 120px;
+	height: 10px;
+	top: 2px;
+	color:#FFF;
+	}
+.cbao{
+	position: absolute;
+	left: 365px;
+	top: 40px;
+	}
+.cbao1{
+	position: absolute;
+	left: 356px;
+	top: 130px;
+	}
+.cbao2{
+	position: absolute;
+	left: 347px;
+	top: 215px;
+	}
+.cbao3{
+	position: absolute;
+	left: 334px;
+	top: 315px;
+	}
+#el1{
+	position: absolute;
+	right: 235px;
+	top: 42px;
+	}
+#el2{
+	position: absolute;
+	right: 235px;
+	top: 130px;
+	}
+#el3{
+	position: absolute;
+	right: 235px;
+	top: 229px;
+	}
+#el4{
+	position: absolute;
+	right: 235px;
+	top: 339px;
+	}
+#qishi{
+	position: absolute;
+	left: 505px;
+	top: 16px;
+	width: 96px;
+	}
+#jian{
+	position: absolute;
+	left: 524px;
+	top: 53px;
+	}
+
+</style>
+<script src="jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" >
+        var i = 0;
+		var x = document.getElementById("music");
+		x.volume = 0.2;
+        $(window).keydown(function(event){
+        	var qishi = $("#qishi");
+        	var jian = $("#jian");
+        	var elong = '';/*设置一个变量名elong为空*/
+                $('.elong').each(function() {
+                    /*找到class+elong的语句并找到匹配元素规定运行的函数*/
+                    elong += $(this).offset().top + ',';/*匹配元素在当前画面的相对偏移*/
+                });
+                elong = elong.substring(0, elong.length - 1);/*提取字符串中介于连个制定下标之间的字符，el的位置     恶龙位置长度-1*/
+                var keyNum = event.which;/*显示按了那个键*/
+                qishi.css({
+                position: 'absolute',
+                }); 
+            switch(keyNum) { //判断按键
+            	case 38:
+            	qishi.animate({top: '-=90px'});
+                jian.animate({top: '-=90px'});
+                break;
+
+            	case 40:
+                qishi.animate({top: '+=90px'});
+                jian.animate({top: '+=90px'});
+            	break;
+            	default:
+                break;
+            } 
+            jian.css({
+                position: 'absolute',
+                }); 
+                switch(keyNum) { //判断按键
+                	case 13:
+                	jian.animate({left: '814px'}, function() {
+                    //alert($(this).offset().top - 108);
+                    //alert(laoshu.indexOf($(this).offset().top - 108));
+                    if (($(this).offset().top) >= 42 && ($(this).offset().top) <= 42+90) {
+                        $('#el1').hide();/*射恶龙*/
+                    }
+                    if (($(this).offset().top) >= 122 && ($(this).offset().top) <= 122+90) {
+                        $('#el2').hide();
+                    }
+                    if (($(this).offset().top) >= 229 && ($(this).offset().top) <= 229+90) {
+                        $('#el3').hide();
+                    }
+                    if (($(this).offset().top) >= 339 && ($(this).offset().top) <= 339+90) {
+                        $('#el4').hide();
+                    }
+                    $(this).hide();
+                    $(this).css('left', '90px');
+                    $(this).show();
+                });
+            break;
+            //控制血量平衡
+            case 32:
+            var xue = $('.xue').width();
+            jian.animate({left: '850px'}, function() {
+                if (($(this).offset().top) >= 42 && ($(this).offset().top) <= 42+90) {
+                    $('#el1').hide();
+					if($('.xue').width() < 260){
+						console.log($('.xue').width());
+                    	$('.xue').css('width', (xue + 15) + 'px');
+					}
+					
+                }
+                if (($(this).offset().top) >= 122 && ($(this).offset().top) <= 122+90) {
+                    $('#el2').hide();
+					if($('.xue').width() < 260){
+						console.log($('.xue').width());
+						$('.xue').css('width', (xue + 15) + 'px');
+						}
+                }
+                if (($(this).offset().top) >= 229 && ($(this).offset().top) <= 229+90) {
+                    $('#el3').hide();
+        			if($('.xue').width() < 260){
+						console.log($('.xue').width());
+                    	$('.xue').css('width', (xue + 15) + 'px');
+					}
+                }
+                if (($(this).offset().top) >= 339 && ($(this).offset().top) <= 339+90) {
+                    $('#el4').hide();
+          			if($('.xue').width() < 260){
+						console.log($('.xue').width());
+                    	$('.xue').css('width', (xue + 15) + 'px');
+					}
+                }
+                $(this).hide();
+                $(this).css('left', '525px');
+                $(this).show();
+            });
+            break;
+            default:
+            break;
+            } 
+        });
+	    $(document).ready(function(){
+	        setTimeout(function () { abc(); }, 1000);
+	    });
+	    //移动
+	    var flag = true;
+	    function abc(){
+	    	if (flag) {
+	            $("#el1").animate({left:'420px'},5500);
+	            $("#el2").animate({left:'420px'},6500);
+	            $("#el3").animate({left:'420px'},4500);
+	            $("#el4").animate({left:'420px'},5900);
+	            $('#el1').hide(1000,function(){
+	            	$(this).css('left', '865px');
+                	$(this).show();
+                	var xue = $('.xue').width();
+	                if (xue <= '0') {
+	                    self.location = "失败页面-初级.html";
+	                } else {
+	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    abc();
+	                }
+	            });
+	            $('#el2').hide(1000,function(){
+	                $(this).css('left', '865px');
+	                $(this).show();
+	                var xue = $('.xue').width();
+	                if (xue <= '0') {
+	                    self.location = "失败页面-初级.html";
+	                } else {
+	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    abc();
+	                }
+	            });
+	            $('#el3').hide(1000,function(){
+	                $(this).css('left', '865px');
+	                $(this).show();
+	                var xue = $('.xue').width();
+	                if (xue <= '0') {
+	                    self.location = "失败页面-初级.html";
+	                } else {
+	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    abc();
+	                }
+	            });
+	            $('#el4').hide(1000,function(){
+	                $(this).css('left', '865px');
+	                $(this).show();
+	                var xue = $('.xue').width();
+	                if (xue <= '0') {
+	                    self.location = "失败页面-初级.html";
+	                } else {
+	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    abc();
+	                }
+	            });
+	        }
+	    }
+	    	//设置倒计时
+	    	var maxtime = 0;    
+            function CountDown() {
+                if (maxtime >= 0) {
+                    seconds = Math.floor(maxtime);
+                    msg = seconds + "秒";
+                    document.all["timer"].innerHTML = msg;
+                    ++maxtime;
+                } else{
+                    self.location = "胜利页面-初级.html";
+                }
+            }
+            timer = setInterval("CountDown()", 1000);
+    </script>
+</head>
+
+<body>
+<div class="kj">
+      <div class="kj_1">
+            
+        <img src="../image/ditu.png" width="720" height="510" />
+        
+      <div class="xueliang">
+      <p style="color:#FFF">生命值：</p>
+      </div>
+      <div class="health">
+        <img src="../image/healthbar1.png"  class="xue" width="200" height="20" />  
+      </div>
+      
+      <div class="score">
+        <p style="color:#FFF">生存时间：</p>
+      </div>
+      
+      <div class="time" id="timer"></div>
+      
+      <div class="cbao">
+            <img src="../image/cb.png" width="200" height="112" /> 
+      </div>
+      
+      <div class="cbao1">
+        <img src="../image/cb.png" width="200" height="112" />
+      </div>  
+      
+      <div class="cbao2">
+            <img src="../image/cb.png" width="200" height="112" />
+      </div>
+      
+      <div class="cbao3">
+            <img src="../image/cb.png" width="200" height="112" />
+      </div>
+      
+      <div class="elong">
+            <img src="../image/4.png" id="el1" width="110" height="90" />
+        <img src="../image/4.png" id="el2" width="110" height="90" />
+            <img src="../image/4.png" id="el3" width="110" height="90" />
+            <img src="../image/4.png" id="el4" width="110" height="90" />
+      </div>
+      
+      <div class="qj">
+            <img src="../image/2_1.png" id="qishi" width="100" height="100" /> 
+            <img src="../image/3.png" id="jian" width="80" height="50" /> 
+      </div>
+      
+  </div>
+</div>
+</body>
+</html>
