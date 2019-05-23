@@ -92,13 +92,14 @@
 	}
 #qishi{
 	position: absolute;
-	left: 506px;
-	top: 130px;
+	left: 505px;
+	top: 16px;
+	width: 96px;
 	}
 #jian{
 	position: absolute;
-	left: 526px;
-	top: 168px;
+	left: 524px;
+	top: 53px;
 	}
 
 </style>
@@ -124,13 +125,13 @@
                 }); 
             switch(keyNum) { //判断按键
             	case 38:
-            	qishi.animate({top: '-=85px'});
-                jian.animate({top: '-=85px'});
+            	qishi.animate({top: '-=90px'});
+                jian.animate({top: '-=90px'});
                 break;
 
             	case 40:
-                qishi.animate({top: '+=85px'});
-                jian.animate({top: '+=85px'});
+                qishi.animate({top: '+=90px'});
+                jian.animate({top: '+=90px'});
             	break;
             	default:
                 break;
@@ -198,11 +199,11 @@
 	    var flag = true;
 	    function abc(){
 	    	if (flag) {
-	            $("#el1").animate({left:'420px'},13000);
-	            $("#el2").animate({left:'420px'},12000);
-	            $("#el3").animate({left:'420px'},10000);
-	            $("#el4").animate({left:'420px'},9000);
-	            $('#el1').hide(1000,function(){
+	            $("#el1").animate({left:'420px'},3500);
+	            $("#el2").animate({left:'420px'},3200);
+	            $("#el3").animate({left:'420px'},3100);
+	            $("#el4").animate({left:'420px'},2900);
+	            $('#el1').hide(500,function(){
 	            	$(this).css('left', '865px');
                 	$(this).show();
                 	var xue = $('.xue').width();
@@ -210,14 +211,14 @@
 	                    self.location = "失败页面-第一关.html";
 	                } else if (!isShoot1) {
 						console.log(isShoot1);
-	                    $('.xue').css('width', (xue -20) + 'px');
+	                    $('.xue').css('width', (xue -200) + 'px');
 	                    abc();
 	                }else{
 						isShoot1 = false
 						abc();	
 					}
 	            });
-	            $('#el2').hide(1000,function(){
+	            $('#el2').hide(500,function(){
 	                $(this).css('left', '865px');
 	                $(this).show();
 	                var xue = $('.xue').width();
@@ -225,14 +226,14 @@
 	                    self.location = "失败页面-第一关.html";
 	                } else if (!isShoot2) {
 						console.log(isShoot2);
-	                    $('.xue').css('width', (xue -20) + 'px');
+	                    $('.xue').css('width', (xue -200) + 'px');
 	                    abc();
 	                }else{
 						isShoot2 = false
 						abc();	
 					}
 	            });
-	            $('#el3').hide(1000,function(){
+	            $('#el3').hide(500,function(){
 	                $(this).css('left', '865px');
 	                $(this).show();
 	                var xue = $('.xue').width();
@@ -240,14 +241,14 @@
 	                    self.location = "失败页面-第一关.html";
 	                } else if (!isShoot3) {
 						console.log(isShoot3);
-	                    $('.xue').css('width', (xue -20) + 'px');
+	                    $('.xue').css('width', (xue -200) + 'px');
 	                    abc();
 	                }else{
 						isShoot3 = false
 						abc();	
 					}
 	            });
-	            $('#el4').hide(1000,function(){
+	            $('#el4').hide(500,function(){
 	                $(this).css('left', '865px');
 	                $(this).show();
 	                var xue = $('.xue').width();
@@ -255,7 +256,7 @@
 	                    self.location = "失败页面-第一关.html";
 	                } else if (!isShoot4) {
 						console.log(isShoot4);
-	                    $('.xue').css('width', (xue -20) + 'px');
+	                    $('.xue').css('width', (xue -200) + 'px');
 	                    abc();
 	                }else{
 						isShoot4 = false

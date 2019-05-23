@@ -92,13 +92,14 @@
 	}
 #qishi{
 	position: absolute;
-	left: 504px;
-	top: 142px;
+	left: 505px;
+	top: 16px;
+	width: 96px;
 	}
 #jian{
 	position: absolute;
 	left: 524px;
-	top: 180px;
+	top: 53px;
 	}
 
 </style>
@@ -120,13 +121,13 @@
                 }); 
             switch(keyNum) { //判断按键
             	case 38:
-            	qishi.animate({top: '-=40px'});
-                jian.animate({top: '-=40px'});
+            	qishi.animate({top: '-=90px'});
+                jian.animate({top: '-=90px'});
                 break;
 
             	case 40:
-                qishi.animate({top: '+=40px'});
-                jian.animate({top: '+=40px'});
+                qishi.animate({top: '+=90px'});
+                jian.animate({top: '+=90px'});
             	break;
             	default:
                 break;
@@ -162,31 +163,31 @@
             jian.animate({left: '850px'}, function() {
                 if (($(this).offset().top) >= 42 && ($(this).offset().top) <= 42+90) {
                     $('#el1').hide();
-					if($('.xue').width() < 260){
+					if($('.xue').width() < 200){
 						console.log($('.xue').width());
-                    	$('.xue').css('width', (xue + 15) + 'px');
+                    	$('.xue').css('width', (xue + 20) + 'px');
 					}
 					
                 }
                 if (($(this).offset().top) >= 122 && ($(this).offset().top) <= 122+90) {
                     $('#el2').hide();
-					if($('.xue').width() < 260){
+					if($('.xue').width() < 200){
 						console.log($('.xue').width());
-						$('.xue').css('width', (xue + 15) + 'px');
+						$('.xue').css('width', (xue + 20) + 'px');
 						}
                 }
                 if (($(this).offset().top) >= 229 && ($(this).offset().top) <= 229+90) {
                     $('#el3').hide();
-        			if($('.xue').width() < 260){
+        			if($('.xue').width() < 200){
 						console.log($('.xue').width());
-                    	$('.xue').css('width', (xue + 15) + 'px');
+                    	$('.xue').css('width', (xue + 20) + 'px');
 					}
                 }
                 if (($(this).offset().top) >= 339 && ($(this).offset().top) <= 339+90) {
                     $('#el4').hide();
-          			if($('.xue').width() < 260){
+          			if($('.xue').width() < 200){
 						console.log($('.xue').width());
-                    	$('.xue').css('width', (xue + 15) + 'px');
+                    	$('.xue').css('width', (xue + 20) + 'px');
 					}
                 }
                 $(this).hide();
@@ -205,10 +206,10 @@
 	    var flag = true;
 	    function abc(){
 	    	if (flag) {
-	            $("#el1").animate({left:'420px'},8500);
-	            $("#el2").animate({left:'420px'},11000);
-	            $("#el3").animate({left:'420px'},9000);
-	            $("#el4").animate({left:'420px'},10500);
+	            $("#el1").animate({left:'420px'},3800);
+	            $("#el2").animate({left:'420px'},4000);
+	            $("#el3").animate({left:'420px'},5000);
+	            $("#el4").animate({left:'420px'},4900);
 	            $('#el1').hide(1000,function(){
 	            	$(this).css('left', '865px');
                 	$(this).show();
@@ -216,7 +217,7 @@
 	                if (xue <= '0') {
 	                    self.location = "失败页面-初级.html";
 	                } else {
-	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    $('.xue').css('width', (xue - 25) + 'px');
 	                    abc();
 	                }
 	            });
@@ -227,7 +228,7 @@
 	                if (xue <= '0') {
 	                    self.location = "失败页面-初级.html";
 	                } else {
-	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    $('.xue').css('width', (xue - 25) + 'px');
 	                    abc();
 	                }
 	            });
@@ -238,7 +239,7 @@
 	                if (xue <= '0') {
 	                    self.location = "失败页面-初级.html";
 	                } else {
-	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    $('.xue').css('width', (xue - 25) + 'px');
 	                    abc();
 	                }
 	            });
@@ -249,7 +250,7 @@
 	                if (xue <= '0') {
 	                    self.location = "失败页面-初级.html";
 	                } else {
-	                    $('.xue').css('width', (xue - 20) + 'px');
+	                    $('.xue').css('width', (xue - 25) + 'px');
 	                    abc();
 	                }
 	            });
