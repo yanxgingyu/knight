@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>游戏简介</title>
+<style type="text/css">
+.kj{
+	width:auto;
+	height:500px;
+	position:relative;
+	}
+.kj_1{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-600px;
+	margin-top: -200px;
+    width: 1200px;
+    height: 400px;
+    text-align: center;
+	}
+.tit{
+	position: absolute;
+	left: 521px;
+	top: -30px;
+	}
+.jsbj{
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	background-color: #999;
+	left: 350px;
+	top: 76px;
+	text-align: center;
+	}
+#wezi{
+	font-size:40px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	}
+#wezi1{
+	font-size:30px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	}
+#wezi2{
+	font-size:20px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	}
+.but_ks{
+	position: absolute;
+	left: 291px;
+	top: 363px;
+	}
+.but_zy{
+	position: absolute;
+	left: 709px;
+	top: 363px;
+	}
+
+</style>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onload="MM_preloadImages('../../image/放大按钮/开始2.png','../../image/放大按钮/主页2.png')">
+<div class="kj">
+      <div class="kj_1">
+      <img src="../../image/选择模式背景-3.png" width="720" height="520" /> 
+            <div class="tit">
+                  <p id="wezi">游戏简介</p>
+            </div>
+            <div class="jsbj">
+              <strong><p id="wezi1">守护·恶龙与骑士</p></strong>
+              <p id="wezi2">第三组：梦之队</p>
+            </div>
+            <div class="but_ks">
+            <a href="../../模式选择.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','../../image/放大按钮/开始2.png',1)"><img src="../../image/素材/按钮图片/开始游戏-2.png" width="200" height="90" id="Image3" /></a>    
+            </div>
+            
+            <div class="but_zy">
+            <a href="../../开始界面.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image','','../../image/放大按钮/主页2.png',1)"><img src="../../image/素材/按钮图片/按钮12.png" width="200" height="90" id="Image" /></a>
+            </div>
+  </div>
+</div>
+</body>
+</html>

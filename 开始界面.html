@@ -3,8 +3,66 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>开始界面</title>
-<embed src="music/ksmusic1.mp3" id="music" volume="0" hidden="true" autostart="true" loop="true"></embed>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<!--<script language="javascript" type="text/javascript">
+//屏幕方向标识，0横屏，其他值竖屏
+var orientation=0;
+//转屏事件，内部功能可以自定义
+function screenOrientationEvent(){
+    if(orientation == 0)document.getElementById("change").value="竖";
+    else document.getElementById("change").value="横";
+}
+var innerWidthTmp = window.innerWidth;
+//横竖屏事件监听方法
+function screenOrientationListener(){
+    try{
+        var iw = window.innerWidth;    
+        //屏幕方向改变处理
+        if(iw != innerWidthTmp){
+            if(iw>window.innerHeight)orientation = 90;
+            else orientation = 0;
+            //调用转屏事件
+            screenOrientationEvent();
+            innerWidthTmp = iw;
+        }
+    } catch(e){alert(e);};
+    //间隔固定事件检查是否转屏，默认500毫秒
+    setTimeout("screenOrientationListener()",500);
+}
+//启动横竖屏事件监听
+screenOrientationListener();
+</script>-->
+<!--<embed src="music/ksmusic1.mp3" id="music" volume="0" hidden="true" autostart="true" loop="true"></embed>-->
 <style type="text/css">
+@media screen and (orientation: portrait) {
+    body { 
+		transform: rotate(90deg) scale(1.5,1.5); 
+		margin-top: 700px;
+		margin-left: 200px
+	}
+}
 *{margin: 0;padding: 0;list-style-type:none; }
 .kj{
 	width:auto;
@@ -48,22 +106,22 @@
 </style>
 </head>
 
-<body>
+<body onload="MM_preloadImages('image/放大按钮/开始2.png','image/放大按钮/简介2.png','image/放大按钮/玩法2.png')">
 <div class="kj">
       <div class="kj_1">
       <img src="image/开始界面1.png" width="720" height="520" />
       <img src="image/bt.png" class="bt" width="570" height="104" />
-<div class="kaishi">
-        <a href="模式选择.html">
-        <img src="image/开始按钮.png" width="200" height="90" /> </a>
+      
+      <div class="kaishi">
+      <a href="载入界面.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image5','','image/放大按钮/开始2.png',1)"><img src="image/素材/按钮图片/开始游戏-2.png" width="200" height="90" id="Image5" /></a> 
       </div>
+      
       <div class="jies">
-          <a>
-          <img src="image/素材/开始页面/游戏简介2.png" width="200" height="90" /></a>
+      <a href="游戏简介/游戏简介.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image','','image/放大按钮/简介2.png',1)"><img src="image/素材/按钮图片/游戏简介1.png" width="200" height="90" id="Image" /></a>   
       </div>
+      
       <div class="wanfa">
-          <a>
-          <img src="image/素材/开始页面/游戏玩法2.png" width="200" height="90" /></a>
+      <a href="游戏玩法/游戏玩法.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','image/放大按钮/玩法2.png',1)"><img src="image/素材/按钮图片/游戏玩法1.png" width="200" height="90" id="Image2" /></a>
       </div>
   </div>
 </div>
